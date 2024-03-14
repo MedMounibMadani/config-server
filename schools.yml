@@ -1,0 +1,31 @@
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://discovery:8761/eureka
+
+server:
+  port: 8040
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+spring:
+  application:
+    name: schools
+  datasource:
+    type: com.mysql.cj.jdbc.MysqlDataSource
+    username: mounib
+    password: Mounib@123
+    url: jdbc:mysql://localhost:3306/schools?createDatabaseIfNotExist=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        enable_lazy_load_no_trans: true

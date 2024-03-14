@@ -1,0 +1,30 @@
+
+server:
+  port: 8070
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+eureka:
+  client:
+    register-with-eureka: false
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      mvc:
+        routes:
+          - id: schools
+            uri: http://localhost:8040
+            predicates:
+              - Path=/api/schools/**
+          - id: classrooms
+            uri: http://localhost:8050
+            predicates:
+              - Path=/api/classroom/**
