@@ -24,7 +24,7 @@ spring:
     type: com.mysql.cj.jdbc.MysqlDataSource
     username: mounib
     password: Mounib@123
-    url: jdbc:mysql://mysqldb:3306/schools?createDatabaseIfNotExist=true
+    url: jdbc:mysql://mysqldb:3308/schools?createDatabaseIfNotExist=true
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
