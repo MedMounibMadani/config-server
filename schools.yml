@@ -9,6 +9,8 @@ eureka:
 server:
   port: 8040
 
+classroom-ms-url: http://localhost:8050/api/classroom
+
 management:
   tracing:
     sampling:
