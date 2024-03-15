@@ -1,4 +1,3 @@
-ysql
 eureka:
   instance:
     hostname: discovery
