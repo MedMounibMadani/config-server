@@ -2,10 +2,15 @@
 server:
   port: 8070
 
+
 management:
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411/api/v2/spans
   tracing:
     sampling:
       probability: 1.0
+
 eureka:
   client:
     register-with-eureka: false
@@ -13,6 +18,8 @@ eureka:
 spring:
   application:
     name: gateway
+  zipkin:
+    base-url: http://zipkin:9411
   cloud:
     gateway:
       discovery:
