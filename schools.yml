@@ -19,6 +19,8 @@ management:
 spring:
   application:
     name: schools
+  zipkin:
+    base-url: http://zipkin:9411
   datasource:
     type: com.mysql.cj.jdbc.MysqlDataSource
     username: mounib
