@@ -2,36 +2,18 @@
 server:
   port: 8070
 
-
-management:
-  zipkin:
-    tracing:
-      endpoint: http://zipkin:9411/api/v2/spans
-  tracing:
-    sampling:
-      probability: 1.0
-
 eureka:
   client:
     register-with-eureka: false
-
+    fetch-registry: true
+    service-url:
+      defaultZone: http://discovery:8761/eureka/
 spring:
   application:
     name: gateway
-  zipkin:
-    base-url: http://zipkin:9411
   cloud:
     gateway:
       discovery:
         locator:
           enabled: true
-      mvc:
-        routes:
-          - id: schools
-            uri: http://school:8040
-            predicates:
-              - Path=/api/schools/**
-          - id: classrooms
-            uri: http://classroom:8050
-            predicates:
-              - Path=/api/classroom/**
+      
