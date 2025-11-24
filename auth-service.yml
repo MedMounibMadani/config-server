@@ -4,9 +4,9 @@ spring:
   config:
     import: configserver:http://config:8888
   datasource:
-    url: jdbc:mysql://localhost:3308/auth_db?useSSL=false&serverTimezone=UTC
-    username: mounib
-    password: Mounib@123
+    url: jdbc:mysql://ecommerce-mysql:3306/${DB_DATABASE}?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -26,11 +26,11 @@ server:
   port: 8071
 
 jwt:
-  secret: MySuperSecretJwtKeyForHmacSha256DontUseInProd1234
+  secret: ${SECRET_TOKEN}
   access-token:
-    expiration-ms: 900000        # 15 minutes
+    expiration-ms: ${TOKEN_EXPIRATION_MS} 
   refresh-token:
-    expiration-ms: 604800000     # 7 days
+    expiration-ms: ${REFRESH_TOKEN_EXPIRATION_MS}    
 
 logging:
   level:
