@@ -13,7 +13,9 @@ spring:
     name: gateway
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
+      routes:
+        - id: auth-service-routes
+          uri: http://auth-service:8071
+          predicates:
+            - Path=/api/auth/**
       
